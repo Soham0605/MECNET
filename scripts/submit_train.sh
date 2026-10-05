@@ -12,11 +12,13 @@
 #SBATCH --gpus=2
 #SBATCH --time=12:00:00
 
-# Launch DDP on 2 local GPUs using torchrun
 source $(conda info --base)/etc/profile.d/conda.sh
 conda activate matersim
 
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
+
+# Navigate to the repository root before executing relative paths
+cd /blue/hennig/ssavarkar/Ultra-hard-materials/MECNET_github
 
 # Run DDP across 2 GPUs
 torchrun --nproc_per_node=2 src/training/train.py
