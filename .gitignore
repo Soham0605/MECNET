@@ -1,0 +1,27 @@
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+env/
+
+# Large Datasets & Model Weights
+*.pt
+*.pth
+*.pkl
+*.json
+*.cif
+data/
+processed_data/
+checkpoints/
+wandb/
+
+# HiPerGator & SLURM logs
+*.log
+*.out
+slurm-*.out
+
+# Visuals & Reports
+*.png
+*.pdf
