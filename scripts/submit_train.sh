@@ -17,6 +17,11 @@ conda activate matersim
 
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
 
+# Disable InfiniBand since both GPUs are on the same local node
+export NCCL_IB_DISABLE=1
+# Force NCCL to use standard socket/shared-memory interfaces
+export NCCL_SOCKET_IFNAME=eth0,enp
+
 # Navigate to the repository root before executing relative paths
 cd /blue/hennig/ssavarkar/Ultra-hard-materials/MECNET_github
 
