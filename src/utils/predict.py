@@ -46,7 +46,8 @@ def predict():
             norm_preds = model(batch)
             
             # Reverse the Z-score normalization
-            preds = (norm_preds * std_y) + mean_y
+            # The model already outputs raw GPa
+            preds = model(batch)
             pred_k, pred_g = preds[0, 0].item(), preds[0, 1].item()
             
             # Ground truth
